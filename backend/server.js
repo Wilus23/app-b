@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const env = require("dotenv").config();
-const port = process.env.PORT || 3000;
+const cors = require("cors");
+const port = process.env.PORT || 3001;
 const mongooseConnection = require("./db/db");
 
 // my files imported
@@ -11,6 +12,8 @@ const userRoutes = require("./routes/userRoutes");
 mongooseConnection();
 // router from express
 const router = express.Router();
+// cors middleware
+app.use(cors());
 
 // express.json()
 app.use(express.json());
