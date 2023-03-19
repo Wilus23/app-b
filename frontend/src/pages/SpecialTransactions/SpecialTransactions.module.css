@@ -1,0 +1,19 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button__earning{
+    margin-right: 20px;
+    width: 156px;
+    height: 42px;
+    border: none;
+    color: white;
+    background-color: #0012FF;
+    cursor: pointer;
+    transition: .3s ease;
+    border-radius: 8px;
+    margin-top: 30px;
+}

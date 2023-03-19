@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Paper, Button, TextInput, Col, Text, Grid } from "@mantine/core";
 import { useForm } from "@mantine/hooks";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   // Funkcja do obsługi rejestracji
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,13 +24,9 @@ const Register = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Przekieruj użytkownika do strony logowania lub do innego miejsca po pomyślnej rejestracji
-        // Na przykład:
-        // history.push('/login');
+        navigate("/dashboard");
         alert("Rejestracja zakończona sukcesem! Możesz się teraz zalogować.");
       } else {
-        // Obsługa błędów, np. wyświetlenie komunikatu o błędzie
-        // Na przykład:
         alert(
           data.message || "Wystąpił błąd podczas rejestracji. Spróbuj ponownie."
         );

@@ -1,0 +1,39 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.special__wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 28px 40px;
+    border: #ababab 2px solid;
+    border-radius: 16px;
+    color: #0b0b0b;
+    background: linear-gradient(45deg, #353535 40%, #1C1C1C 75%, #000000 100% );
+    margin-right: 90px;
+}
+.button__earning{
+    margin-right: 20px;
+    width: 156px;
+    height: 42px;
+    border: none;
+    color: white;
+    background-color: #0012FF;
+    cursor: pointer;
+    transition: .3s ease;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.buttonLink{
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: white;
+    font-weight: '600';
+}

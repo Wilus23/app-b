@@ -13,6 +13,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const balanceController = require("../controllers/balanceController");
 const addEarningController = require("../controllers/addEarningController");
 const addExpeneseController = require("../controllers/addExpenseContorller");
+const { deleteTransaction } = require("../controllers/deleteTransaction");
 
 // Balance history controllers
 const {
@@ -46,6 +47,8 @@ router.post(
   authMiddleware,
   addExpeneseController.addExpense
 );
+
+router.delete("/users/transaction/:id", authMiddleware, deleteTransaction);
 
 // Balance history
 router.get("/users/expenses", authMiddleware, getExpenses);

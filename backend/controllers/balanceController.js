@@ -23,6 +23,9 @@ exports.getBalance = async (req, res) => {
     console.error(error);
     res
       .status(500)
-      .json({ message: "Wystąpił błąd podczas pobierania stanu konta" });
+      .json({
+        message: "Wystąpił błąd podczas pobierania stanu konta",
+        error: error.message,
+      });
   }
 };

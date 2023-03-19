@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 28px 40px;
+    border: #ababab 2px solid;
+    border-radius: 16px;
+    color: white;
+    background-color: black;
+    margin-right: 90px;
+}
+.button__earning{
+    margin-right: 20px;
+    width: 156px;
+    height: 42px;
+    border: none;
+    color: white;
+    background-color: #48bf53;
+    cursor: pointer;
+    transition: .3s ease;
+    border-radius: 8px;
+}
+.buttonLink{
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: white;
+    font-weight: '600';
+}
+.button__expense{
+    margin-right: 20px;
+    width: 156px;
+    height: 42px;
+    border: none;
+    color: white;
+    background-color: #EA4335;
+    cursor: pointer;
+    transition: .3s ease;
+    border-radius: 8px;
+    font-weight: '600';
+}

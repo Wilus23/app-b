@@ -8,8 +8,10 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    const token = localStorage.getItem("token");
-    return token !== null;
+    return localStorage.getItem("token") !== null;
+  });
+  const [token, setToken] = useState(() => {
+    return localStorage.getItem("token");
   });
 
   const login = async (email, password) => {
@@ -31,14 +33,12 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
 
       if (response.ok) {
-        const token = data.token;
-        localStorage.setItem("token", token);
-        console.log("Before setting isLoggedIn:", isLoggedIn);
+        const receivedToken = data.token;
+        console.log("Received token:", receivedToken);
+        localStorage.setItem("token", receivedToken);
         setIsLoggedIn(true);
-        console.log("After setting isLoggedIn:", isLoggedIn);
+        setToken(receivedToken);
       } else {
-        // Obsługa błędów, np. wyświetlenie komunikatu o błędzie
-        // Na przykład:
         alert(
           data.message || "Wystąpił błąd podczas logowania. Spróbuj ponownie."
         );
@@ -52,10 +52,11 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
+    setToken(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, login, logout, token }}>
       {children}
     </AuthContext.Provider>
   );

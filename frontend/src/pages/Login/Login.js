@@ -25,7 +25,7 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        login(email, password);
+        await login(email, password); // <- Zaktualizowane: użyj funkcji login z kontekstu Auth
         navigate("/dashboard"); // przekierowanie do strony po zalogowaniu
       } else {
         alert(

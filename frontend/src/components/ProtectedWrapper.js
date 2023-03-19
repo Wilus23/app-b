@@ -1,15 +1,15 @@
 import React from "react";
-import { Outlet, Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = () => {
+const ProtectedWrapper = ({ children }) => {
   const { isLoggedIn } = useAuth();
 
   if (isLoggedIn) {
-    return <Outlet />;
+    return <>{children}</>;
   }
 
   return <Navigate to="/login" />;
 };
 
-export default ProtectedRoute;
+export default ProtectedWrapper;
