@@ -1,13 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import {
-  AiFillDashboard,
-  AiFillDollarCircle,
-  AiFillMinusCircle,
-} from "react-icons/ai";
-import { BiHistory } from "react-icons/bi";
-import { IoLogOutOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import LogoutButton from "../ui/LogoutButton";
 
@@ -17,12 +9,6 @@ import menu__raports from "../../assets/svg/menu/menu__raports.svg";
 import menu__arrowDown from "../../assets/svg/menu/menu__arrowDown.svg";
 import menu__arrowUp from "../../assets/svg/menu/menu__arrowUp.svg";
 import menu__special from "../../assets/svg/menu/menu__special.svg";
-
-export const DashboardIcon = () => <AiFillDashboard />;
-export const HistoryIcon = () => <BiHistory />;
-export const AddIncomeIcon = () => <AiFillDollarCircle />;
-export const AddExpenseIcon = () => <AiFillMinusCircle />;
-export const LogoutIcon = () => <IoLogOutOutline />;
 
 const navStyle = {
   display: "flex",
@@ -60,8 +46,6 @@ const logo = {
 };
 
 const Menu = () => {
-  const { logout } = useAuth();
-
   return (
     <nav style={navStyle}>
       <div style={logo}>

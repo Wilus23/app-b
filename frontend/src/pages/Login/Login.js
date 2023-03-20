@@ -44,7 +44,11 @@ const Login = () => {
         <Paper
           padding="md"
           shadow="xs"
-          style={{ maxWidth: 400, width: "100%" }}
+          style={{
+            maxWidth: 400,
+            width: "100%",
+            backgroundColor: "transparent",
+          }}
         >
           <Text align="center" size="xl" style={{ marginBottom: 20 }}>
             Logowanie

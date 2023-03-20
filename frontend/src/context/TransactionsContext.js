@@ -38,8 +38,8 @@ export const TransactionsProvider = ({ children }) => {
           ...transaction,
           date: formatDate(transaction.date),
         }));
-        setTransactions(formattedTransactions); // Zmienione z data.transactions na data
-        calculateBalance(formattedTransactions); // Zmienione z data.transactions na data
+        setTransactions(formattedTransactions);
+        calculateBalance(formattedTransactions);
       } else {
         console.error(data.message);
       }
