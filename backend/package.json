@@ -4,7 +4,7 @@
   "description": "Aplikacja do tworzenia budżetu personalnego",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "backend": "nodemon server.js"
   },
   "author": "",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "jest": "^29.5.0",
+    "mongodb-memory-server": "^8.12.1",
     "supertest": "^6.3.3"
   }
 }

@@ -15,8 +15,8 @@ const transactionSchema = new mongoose.Schema({
   priority: {
     type: Number,
     required: true,
-    min: [1, "Priority must be a number in range from 1 to 4"],
-    max: [4, "Priority must be a number in range from 1 to 4"],
+    min: [1, "Priorytet musi mieć numer od 1 do 4"],
+    max: [4, "Priorytet musi mieć numer od 1 do 4"],
   },
   description: { type: String },
 });

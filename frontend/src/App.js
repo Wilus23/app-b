@@ -24,7 +24,6 @@ function App() {
   return (
     <div>
       <Router>
-        {/* ...dodaj tu ewentualnie komponenty, które mają być wyświetlane na każdej stronie, np. Navbar */}
         <Menu />
         <Routes>
           <Route path="/" element={<Home />} />

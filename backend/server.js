@@ -2,9 +2,8 @@ const express = require("express");
 const app = express();
 const env = require("dotenv").config();
 const cors = require("cors");
-const port = process.env.PORT || 3001;
 const mongooseConnection = require("./db/db");
-
+const port = process.env.NODE_ENV === "test" ? 3002 : 3001;
 // my files imported
 const userRoutes = require("./routes/userRoutes");
 
@@ -21,7 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // rejestracja i logowanie
 app.use("/api", userRoutes);
-
-app.listen(port, () => {
-  console.log(`Serwer started on port: ${port}`);
-});
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    console.log(`Serwer started on port: ${port}`);
+  });
+}
+module.exports = app;

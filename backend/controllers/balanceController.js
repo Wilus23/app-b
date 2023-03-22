@@ -21,11 +21,9 @@ exports.getBalance = async (req, res) => {
     res.status(200).json({ balance });
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({
-        message: "Wystąpił błąd podczas pobierania stanu konta",
-        error: error.message,
-      });
+    res.status(500).json({
+      message: "Wystąpił błąd podczas pobierania stanu konta",
+      error: error.message,
+    });
   }
 };

@@ -1,4 +1,3 @@
-// Dodaj ten import na początku pliku
 const Transactions = require("../models/transactionsModel");
 
 exports.deleteTransaction = async (req, res) => {

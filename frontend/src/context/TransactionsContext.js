@@ -52,7 +52,7 @@ export const TransactionsProvider = ({ children }) => {
     const balance = transactions.reduce((acc, transaction) => {
       return acc + transaction.amount;
     }, 0);
-    console.log("Calculated balance:", balance); // Dodaj tę linijkę
+    console.log("Calculated balance:", balance);
     setBalance(balance);
   };
 
